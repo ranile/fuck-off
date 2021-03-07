@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-size: 16px;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#fuck-off-card {
+    width: 50%;
+}
+
+
+.top-bar-left {
+    margin-left: auto;
+}
+
+.fuck-content {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    gap: 1.5em;
+    padding-top: 2em;
+    text-align: center;
+}
+
+.fuck-off-card-content {
+    padding: 0 1.5em;
+}
+
+.autocomplete-input {
+    width: 50%;
+    margin: auto;
+}
+
+section#footer {
+    position: absolute;
+    bottom: 0;
+    height: 3em;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15em;
+}

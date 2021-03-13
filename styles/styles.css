@@ -25,9 +25,8 @@ code {
 }
 
 #fuck-off-card {
-    width: 50%;
+    width: 90%;
 }
-
 
 .top-bar-left {
     margin-left: auto;
@@ -62,5 +61,15 @@ section#footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15em;
+    gap: 2em;
+}
+
+@media (min-width: 1200px) {
+    #fuck-off-card {
+        width: 50%;
+    }
+
+    section#footer {
+        gap: 15em;
+    }
 }

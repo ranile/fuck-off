@@ -10,10 +10,14 @@ import {FuckToGive} from "../models/FuckToGive";
 import Footer from "../components/Footer";
 import GiveFuck from "../components/GiveFuck";
 import TopCardBar from "../components/TopCardBar";
-import {operations} from "../utils/data"
 import Head from 'next/head'
+import axios from "axios";
 
-const IndexPage = () => {
+interface IndexPageProps {
+    operations: FuckToGive[]
+}
+
+const IndexPage = ({operations}: IndexPageProps) => {
     const [currentFuck, setCurrentFuck] = useState<FuckToGive | null>(null)
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
@@ -69,6 +73,19 @@ const IndexPage = () => {
             </ThemeProvider>
         </>
     );
+}
+
+export async function getStaticProps() {
+    const resp = await axios.get("https://foaas.com/operations", {
+        headers: {'Accept': 'application/json'},
+    })
+
+    const props: IndexPageProps = {
+        operations: resp.data as FuckToGive[]
+    }
+    return {
+        props
+    }
 }
 
 export default IndexPage

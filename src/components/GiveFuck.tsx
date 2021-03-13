@@ -1,11 +1,12 @@
 import React, {useRef, useState} from "react";
 import {GivenFuck} from "../models/GivenFuck";
 import axios from "axios";
-import {Button, Snackbar, TextField, Typography} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
 import {FuckToGive} from "../models/FuckToGive";
 import TopCardBar from "../components/TopCardBar";
-import FileCopyIcon from '@material-ui/icons/FileCopy';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import ShowGivenFuck from "./ShowGivenFuck";
 
 interface GiveFuckProps {
     fuck: FuckToGive,
@@ -23,7 +24,6 @@ function GiveFuck(props: GiveFuckProps) {
     const data = useRef(new Map())
     const [state, setState] = useState(State.Input)
     const [givenFuck, setGivenFuck] = useState<GivenFuck>()
-    const [snackbarOpen, setSnackbarOpen] = React.useState(false);
 
     let view
     switch (state) {
@@ -69,32 +69,11 @@ function GiveFuck(props: GiveFuckProps) {
             )
             break
         case State.Output:
-            const onCopy = () => {
-                setSnackbarOpen(true)
+            if (givenFuck === undefined) {
+                throw Error("impossible")
             }
             view = (
-                <>
-                    <TopCardBar onBackPressed={props.onBackPressed}>
-                        <CopyToClipboard text={`${givenFuck?.message} ${givenFuck?.subtitle}`} onCopy={onCopy} >
-                            <FileCopyIcon className="clickable"/>
-                        </CopyToClipboard>
-                    </TopCardBar>
-                    <div className="fuck-content">
-                        <Typography variant="h4" component="p">
-                            {givenFuck?.message}
-                        </Typography>
-
-                        <Typography variant="body1" component="p">
-                            {givenFuck?.subtitle}
-                        </Typography>
-                    </div>
-                    <Snackbar
-                        open={snackbarOpen}
-                        message="Copied"
-                        autoHideDuration={3000}
-                        onClose={() => setSnackbarOpen(false)}
-                    />
-                </>
+                <ShowGivenFuck givenFuck={givenFuck} onBackPressed={props.onBackPressed}/>
             )
             break
     }

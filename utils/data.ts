@@ -1,4 +1,4 @@
-import {FuckToGive} from "./models/FuckToGive";
+import {FuckToGive} from "../models/FuckToGive";
 
 // language=JSON
 const s = `[

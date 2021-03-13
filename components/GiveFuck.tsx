@@ -6,7 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import {FuckToGive} from "../models/FuckToGive";
 import TopCardBar from "../components/TopCardBar";
-import ShowGivenFuck from "./ShowGivenFuck";
+import ShowGivenFuck from "../components/ShowGivenFuck";
 
 interface GiveFuckProps {
     fuck: FuckToGive,
@@ -39,7 +39,6 @@ function GiveFuck(props: GiveFuckProps) {
 
                 const json = resp.data as GivenFuck
 
-                console.log(json, url)
                 setGivenFuck(json)
                 setState(State.Output)
             }

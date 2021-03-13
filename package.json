@@ -1,47 +1,27 @@
 {
-  "name": "fuck-off",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://hamza1311.github.io/fuck-off/",
+  "name": "foaas-web",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "next start",
+    "type-check": "tsc"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
-    "@types/node": "^12.20.4",
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.1",
     "axios": "^0.21.1",
-    "react": "^17.0.1",
     "react-copy-to-clipboard": "^5.0.3",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.2.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "next": "latest",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@types/react-copy-to-clipboard": "^5.0.0"
+    "@types/node": "^12.12.21",
+    "@types/react": "^17.0.2",
+    "@types/react-copy-to-clipboard": "^5.0.0",
+    "@types/react-dom": "^17.0.1",
+    "typescript": "4.0"
   }
 }

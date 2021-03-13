@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import React, {ReactNode} from "react";
 
+
 interface TopCardBarProps {
     showBackButton: boolean
     onBackPressed: () => void,
